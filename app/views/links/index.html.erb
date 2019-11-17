@@ -1,0 +1,19 @@
+<h1>Listing links</h1>
+
+
+<%= link_to 'New link', new_link_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>URL</th>
+    <th></th>
+  </tr>
+ 
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link.title %></td>
+      <td><%= link.text %></td>
+      <td><%= link_to 'Show', link_path(link) %></td>
+    </tr>
+  <% end %>
+</table>

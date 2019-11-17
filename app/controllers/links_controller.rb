@@ -1,16 +1,33 @@
 class LinksController < ApplicationController
+    def index
+        @links = Link.all
+    end
+
+    def show
+        @link = Link.find(params[:id])
+    end
+
     def new
+        @link = Link.new
     end
 
     def create
         @link = Link.new(link_params)
  
-        @link.save
-        redirect_to @link
+        if @link.save
+            redirect_to @link
+        else
+            render :new
+        end
     end
 
-    def show
-        @link = Link.find(params[:id])
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
     end
 
     private
