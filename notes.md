@@ -1,13 +1,13 @@
 ## USER
-has_many :articles
+has_many :links
 has_many :comments
-has_many :commented_articles, through: :comments, source: :article
+has_many :commented_links, through: :comments, source: :link
 
-## ARTICLE
+## LINK
 belongs_to :user
 has_many :comments
 has_many :users, through: :comments
 
 ## COMMENT
 belongs_to :user
-belongs_to :article
+belongs_to :link
