@@ -1,0 +1,17 @@
+<%= form_with(model: @link, local: true) do |f| %>
+    <%= render '/shared/errors', object: @link %>
+    <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :url %><br>
+        <%= f.url_field :url %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>

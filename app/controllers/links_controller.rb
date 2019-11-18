@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     end
 
     def create
-        @link = Link.new(link_params)
+        @link = current_user.links.build(link_params)
  
         if @link.save
             redirect_to @link
@@ -22,6 +22,7 @@ class LinksController < ApplicationController
     end
 
     def edit
+        @link = Link.find(params[:id])
     end
 
     def update
