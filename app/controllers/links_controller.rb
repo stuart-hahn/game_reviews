@@ -36,10 +36,10 @@ class LinksController < ApplicationController
     end
 
     def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
+        @link = Link.find(params[:id])
+        @link.destroy
        
-        redirect_to articles_path
+        redirect_to links_path
     end
 
     private
